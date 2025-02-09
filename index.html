@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для любимой Полечки</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="heart" style="top: 10%; left: 20%;"></div>
+    <div class="heart" style="top: 30%; left: 70%;"></div>
+    <div class="heart" style="top: 50%; left: 40%;"></div>
+    <div class="heart" style="top: 70%; left: 10%;"></div>
+    <div class="heart" style="top: 90%; left: 80%;"></div>
+
+    
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <h1>С Днем всех влюбленных! Полечка</h1>
+        <p>Я тебя очень люблю ❤️</p>
+        <audio id="background-music">
+            <source src="music.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио.
+        </audio>
+        <button onclick="toggleMusic()">Включить/выключить музыку</button>
+    </div>
+
+    
+    <div class="timeline" data-aos="fade-up" data-aos-duration="1000">
+        <h2>Таймлайн наших отношений</h2>
+        <div id="timeline-events">
+            
+        </div>
+        <div class="add-event-form">
+            <h3>Добавить новое событие</h3>
+            <input type="date" id="event-date" placeholder="Дата события">
+            <textarea id="event-description" placeholder="Описание события..."></textarea>
+            <button onclick="addEvent()">Добавить событие</button>
+        </div>
+    </div>
+
+    
+    <div class="gallery" data-aos="fade-left" data-aos-duration="1000">
+        <h2>Фотогалерея</h2>
+        <div class="upload-section">
+            <label for="upload-photo" class="upload-button">Выбрать фото</label>
+            <input type="file" id="upload-photo" multiple style="display: none;">
+            <textarea id="photo-description" placeholder="Опишите фотографию..."></textarea>
+            <button onclick="uploadPhotos()">Загрузить</button>
+        </div>
+        <div id="photo-grid"></div>
+    </div>
+
+    
+    <div class="letter-form" data-aos="fade-right" data-aos-duration="1000">
+        <h2>Письма друг другу</h2>
+        <textarea id="letter-text" placeholder="Напишите письмо..."></textarea>
+        <select id="letter-author">
+            <option value="me">От меня</option>
+            <option value="partner">От тебя</option>
+        </select>
+        <button onclick="saveLetter()">Отправить письмо</button>
+    </div>
+    <div id="letters-list"></div>
+
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
